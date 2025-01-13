@@ -19,7 +19,7 @@ const Settings = () => {
 
   const fetchSettings = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/settings", {
+      const response = await axios.get("https://qr-code-pdf-generation-server.onrender.com/api/settings", {
         withCredentials: true,
       });
       setSettings(response.data);
@@ -32,7 +32,7 @@ const Settings = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.put("http://localhost:5000/api/settings", settings, {
+      await axios.put("https://qr-code-pdf-generation-server.onrender.com/api/settings", settings, {
         withCredentials: true,
       });
       setMessage("Settings updated successfully");
