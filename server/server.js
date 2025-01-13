@@ -42,18 +42,6 @@ app.use((req, res, next) => {
   next();
 });
 
-const checkAuth = (req, res, next) => {
-  if (req.path.startsWith("/api/auth/")) {
-    return next();
-  }
-
-  if (!req.session || !req.session.user) {
-    return res.status(401).json({ message: "Unauthorized" });
-  }
-  next();
-};
-
-app.use(checkAuth);
 
 initializeDatabase()
   .then(() => {
