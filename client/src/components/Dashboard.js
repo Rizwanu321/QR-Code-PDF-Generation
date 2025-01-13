@@ -14,7 +14,7 @@ const Dashboard = () => {
   const fetchVouchers = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/vouchers/list",
+        "https://qr-code-pdf-generation-server.onrender.com/api/vouchers/list",
         {
           withCredentials: true,
         }
@@ -29,7 +29,7 @@ const Dashboard = () => {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5000/api/vouchers/generate",
+        "https://qr-code-pdf-generation-server.onrender.com/api/vouchers/generate",
         {},
         { withCredentials: true }
       );
@@ -47,7 +47,7 @@ const Dashboard = () => {
   const downloadPDF = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/vouchers/pdf/${id}`,
+        `https://qr-code-pdf-generation-server.onrender.com/api/vouchers/pdf/${id}`,
         {
           responseType: "blob",
           withCredentials: true,
