@@ -8,7 +8,7 @@ const Navigation = ({ setIsAuthenticated, setUser, user }) => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/logout",
+        "https://qr-code-pdf-generation-server.onrender.com/api/auth/logout",
         {},
         { withCredentials: true }
       );
