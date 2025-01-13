@@ -61,6 +61,25 @@ async function initializeDatabase() {
       VALUES ('Rizwanu', 'Rizwanu123')
     `);
 
+    // Add default settings record
+    await connection.query(`
+      INSERT IGNORE INTO Settings (
+        title,
+        max_expiry_days,
+        voucher_width,
+        voucher_height,
+        title_font_size,
+        text_font_size
+      ) VALUES (
+        'Gift Voucher',
+        30,
+        210,
+        297,
+        25,
+        12
+      )
+    `);
+
     await connection.end();
     console.log("Database and tables initialized successfully");
   } catch (error) {
