@@ -21,7 +21,7 @@ const App = () => {
     const checkAuth = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/auth/check",
+          "https://qr-code-pdf-generation-server.onrender.com/api/auth/check",
           {
             withCredentials: true,
           }
